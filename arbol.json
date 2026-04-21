@@ -1,0 +1,86 @@
+{
+    "type": "Program",
+    "body": [
+        {
+            "type": "FuncDecl",
+            "name": "suma",
+            "params": [
+                {
+                    "type": "Param",
+                    "name": "x"
+                },
+                {
+                    "type": "Param",
+                    "name": "y"
+                }
+            ],
+            "body": [
+                {
+                    "type": "Return",
+                    "value": {
+                        "type": "BinOp",
+                        "op": "+",
+                        "left": {
+                            "type": "Var",
+                            "name": "x"
+                        },
+                        "right": {
+                            "type": "Var",
+                            "name": "y"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "type": "Assign",
+            "target": {
+                "type": "Var",
+                "name": "a"
+            },
+            "value": {
+                "type": "Const",
+                "value": 10
+            }
+        },
+        {
+            "type": "Assign",
+            "target": {
+                "type": "Var",
+                "name": "b"
+            },
+            "value": {
+                "type": "Const",
+                "value": 20
+            }
+        },
+        {
+            "type": "Assign",
+            "target": {
+                "type": "Var",
+                "name": "c"
+            },
+            "value": {
+                "type": "FuncCall",
+                "name": "suma",
+                "args": [
+                    {
+                        "type": "Var",
+                        "name": "a"
+                    },
+                    {
+                        "type": "Var",
+                        "name": "b"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Print",
+            "argument": {
+                "type": "Var",
+                "name": "c"
+            }
+        }
+    ]
+}
